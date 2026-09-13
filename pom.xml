@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.boon17labs</groupId>
+    <artifactId>metrics-to-file-demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>metrics-to-file-demo</name>
+    <description>Demo applications exercising the metrics-to-file modules</description>
+
+    <modules>
+        <module>demo-core</module>
+        <module>demo-prometheus</module>
+        <module>demo-spring</module>
+        <module>demo-autoinstrument</module>
+        <module>demo-full</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <metrics-to-file.version>1.0.0-SNAPSHOT</metrics-to-file.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.boon17labs</groupId>
+                <artifactId>metrics-to-file-core</artifactId>
+                <version>${metrics-to-file.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.boon17labs</groupId>
+                <artifactId>metrics-to-file-prometheus</artifactId>
+                <version>${metrics-to-file.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.boon17labs</groupId>
+                <artifactId>metrics-to-file-spring</artifactId>
+                <version>${metrics-to-file.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.boon17labs</groupId>
+                <artifactId>metrics-to-file-autoinstrument</artifactId>
+                <version>${metrics-to-file.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

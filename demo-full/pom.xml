@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.boon17labs</groupId>
+        <artifactId>metrics-to-file-demo</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>demo-full</artifactId>
+    <name>demo-full</name>
+    <description>Uses all metrics-to-file modules together</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.boon17labs</groupId>
+            <artifactId>metrics-to-file-core</artifactId>
+        </dependency>
+        <!-- TODO: add metrics-to-file-prometheus, metrics-to-file-spring and
+             metrics-to-file-autoinstrument here once those modules ship. -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>io.github.boon17labs.metricstofile.demo.full.DemoApp</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
