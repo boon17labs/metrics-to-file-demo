@@ -37,7 +37,7 @@ cleanly:
 
 ```bash
 cd metrics-to-file-demo
-mvn -pl demo-core -am compile exec:java
+mvn -pl demo-core compile exec:java
 ```
 
 Metrics are written to `demo-core/metrics/demo-core-<yyyy-MM-dd>.log`.
@@ -46,7 +46,7 @@ Press Ctrl+C to stop early — shutdown is handled cleanly either way.
 ## Running demo-full
 
 ```bash
-mvn -pl demo-full -am compile exec:java
+mvn -pl demo-full compile exec:java
 ```
 
 Currently equivalent to `demo-core` (see that module's Javadoc) since the
