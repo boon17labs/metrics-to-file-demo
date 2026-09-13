@@ -1,5 +1,9 @@
 # metrics-to-file-demo
 
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)
+![Maven](https://img.shields.io/badge/Build-Maven-blue?logo=apachemaven)
+![License](https://img.shields.io/badge/status-demo-lightgrey)
+
 Demo applications exercising [metrics-to-file](https://github.com/boon17labs/metrics-to-file),
 consumed from `~/dev/metrics-to-file` as a local Maven dependency
 (`mvn install` it there first — see below).
