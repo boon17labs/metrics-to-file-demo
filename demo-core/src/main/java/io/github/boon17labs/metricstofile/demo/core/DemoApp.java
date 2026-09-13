@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Exercises metrics-to-file-core end to end: starts it with every built-in
- * metric enabled (the four defaults plus all four opt-ins), then drives
+ * metric enabled (the four defaults plus all five opt-ins), then drives
  * synthetic heap pressure, thread churn, and periodic custom metrics for a
  * fixed run, so the resulting log file has something interesting in it.
  */
@@ -38,11 +38,12 @@ public final class DemoApp {
                 .withClassLoading()
                 .withCpu()
                 .withCodeCache()
+                .withProcessMemory()
                 .start();
 
-        System.out.println("[demo-core] started - heap, metaspace, threads, gc, direct memory, "
-                + "class loading, cpu and code cache metrics written to ./metrics every "
-                + METRICS_COLLECTION_INTERVAL.getSeconds() + "s");
+        System.out.println("[demo-core] started - heap, metaspace, threads (incl. stack_mb), gc, "
+                + "direct memory, class loading, cpu, code cache and process rss metrics written "
+                + "to ./metrics every " + METRICS_COLLECTION_INTERVAL.getSeconds() + "s");
 
         final HeapPressureSimulator heapPressure = new HeapPressureSimulator();
         final ThreadChurnSimulator threadChurn = new ThreadChurnSimulator();
